@@ -33,6 +33,8 @@ dependencies {
   implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.springdoc:springdoc-openapi-ui:1.6.3")
+  implementation("io.jsonwebtoken:jjwt:0.9.1")
+  implementation("org.springframework.boot:spring-boot-starter-security")
   compileOnly("org.projectlombok:lombok")
   developmentOnly("org.springframework.boot:spring-boot-devtools")
   annotationProcessor("org.projectlombok:lombok")
