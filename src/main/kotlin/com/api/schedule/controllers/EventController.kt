@@ -1,5 +1,6 @@
 package com.api.schedule.controllers
 
+import com.api.schedule.dto.EventDTO
 import com.api.schedule.entities.Event
 import com.api.schedule.exceptions.ResponseException
 import com.api.schedule.services.EventService
@@ -40,7 +41,7 @@ class EventController {
   }
 
   @PostMapping
-  fun save(@RequestBody event: Event): Event {
+  fun save(@RequestBody event: EventDTO): Event {
     try {
       return eventService.save(event)
     } catch (e: ResponseException) {
