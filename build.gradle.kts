@@ -35,10 +35,11 @@ dependencies {
   implementation("org.springdoc:springdoc-openapi-ui:1.6.3")
   implementation("io.jsonwebtoken:jjwt:0.9.1")
   implementation("org.springframework.boot:spring-boot-starter-security")
+  implementation("org.flywaydb:flyway-core:7.15.0")
   compileOnly("org.projectlombok:lombok")
   developmentOnly("org.springframework.boot:spring-boot-devtools")
   annotationProcessor("org.projectlombok:lombok")
-  runtimeOnly("org.postgresql:postgresql")
+  runtimeOnly("org.postgresql:postgresql:42.3.8")
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

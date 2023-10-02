@@ -1,6 +1,7 @@
 package com.api.schedule.controllers
 
 import com.api.schedule.entities.Event
+import com.api.schedule.exceptions.ResponseException
 import com.api.schedule.services.EventService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
@@ -15,7 +16,7 @@ class EventController {
   fun findAll(): List<Event> {
     try {
       return eventService.findAll()
-    } catch (e: Exception) {
+    } catch (e: ResponseException) {
       throw e
     }
   }
@@ -24,7 +25,7 @@ class EventController {
   fun findUnique(@PathVariable id: Long): Event {
     try {
       return eventService.findUnique(id)
-    } catch (e: Exception) {
+    } catch (e: ResponseException) {
       throw e
     }
   }
@@ -33,7 +34,7 @@ class EventController {
   fun findByTitle(@RequestParam title: String): List<Event> {
     try {
       return eventService.findByTitle(title)
-    } catch (e: Exception) {
+    } catch (e: ResponseException) {
       throw e
     }
   }
@@ -42,7 +43,7 @@ class EventController {
   fun save(@RequestBody event: Event): Event {
     try {
       return eventService.save(event)
-    } catch (e: Exception) {
+    } catch (e: ResponseException) {
       throw e
     }
   }
@@ -51,7 +52,7 @@ class EventController {
   fun update(@PathVariable id: Long, @RequestBody event: Event): Event {
     try {
       return eventService.update(id, event)
-    } catch (e: Exception) {
+    } catch (e: ResponseException) {
       throw e
     }
   }
@@ -60,7 +61,7 @@ class EventController {
   fun delete(@PathVariable id: Long) {
     try {
       eventService.delete(id)
-    } catch (e: Exception) {
+    } catch (e: ResponseException) {
       throw e
     }
   }
